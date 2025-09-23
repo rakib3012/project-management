@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router";
+ 
+import Board from "../pages/Board";
+import BoardList from "../pages/BoardList";
 
 const router = createBrowserRouter([
+
   {
-    path: "/",
-    element: <div>Hello World</div>,
-  },
-  {
-    path:"/board",
+    path:"/",
     element:<Board/>
   },
   {
@@ -15,3 +15,4 @@ const router = createBrowserRouter([
   }
 ]);
 
+export default router

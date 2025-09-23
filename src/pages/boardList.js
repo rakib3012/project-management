@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const boardList = () => {
+export const BoardList = () => {
   return (
     <div>boardList</div>
   )

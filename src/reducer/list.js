@@ -1,4 +1,5 @@
 // list =[{id , title , boardId, tasksId:[list1,list2]}, {id , title , boardId, tasksId:[list1,list2]}]
+const list =[]
 export const listReducer = (state=[], action)=>{
 switch(action.type){
     case "create_list_id":{
@@ -45,7 +46,15 @@ switch(action.type){
         })
         return updatedList
     }
-    case "remove_task_id_from_a_list":{}
+    case "remove_task_id_from_a_list":{
+        const updatedListList = list.map(item =>{
+            if(item.id===action.payload.id){
+                return {...item, taskId: taskId.filter(item !== action.payload.taskId)}
+            }
+            return item
+        })
+        return updatedListList
+    }
     default:{
         return list
     }

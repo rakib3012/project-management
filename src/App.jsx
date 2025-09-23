@@ -10,7 +10,9 @@ function App() {
   return (
     <>
       <BoardProvider>
-
+        <RouterProvider>
+          {router}
+        </RouterProvider>
       </BoardProvider>
     </>
   )

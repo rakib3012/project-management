@@ -8,7 +8,7 @@ export const boardReducer = (boards = [], action) => {
     case "Create_Board": {
       const newBoard = {
         id: Date.now() + "",
-        title: action.payload,
+        title: action.payload.title,
         list: [],
         tasks: [],
       };
