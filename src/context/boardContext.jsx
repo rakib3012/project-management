@@ -1,7 +1,7 @@
 import { createContext,useReducer } from "react";
 import boardReducer from "../reducer/board";
 
-const BoardContext = createContext();
+  const BoardContext = createContext();
 
  const BoardProvider = (children) => {
   const [boards, dispatchBoardAction] = useReducer(boardReducer);
@@ -11,4 +11,4 @@ const BoardContext = createContext();
     </BoardContext.Provider>
   );
 };
-export default boardContext;
+export default BoardProvider;

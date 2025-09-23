@@ -1,13 +1,13 @@
-// list =[{id , title , boardId, tasksId:[list1,list2]}, {id , title , boardId, tasksId:[list1,list2]}]
-const list =[]
-export const listReducer = (state=[], action)=>{
+// list =[{id , title , boardId, tasks:[list1,list2]}, {id , title , boardId, tasks:[list1,list2]}]
+
+export const listReducer = (list=[], action)=>{
 switch(action.type){
     case "create_list_id":{
         const newList ={
             id:action.payload.id,
             title:action.payload.title,
             boardId:action.payload.boardId,
-            taskId:[]
+            tasks:[]
         }
         return {...list, newList}
     }
@@ -40,7 +40,7 @@ switch(action.type){
     case "add_task_id_to_a_list":{
         const updatedList = list.map(item=>{
             if(item.id === action.payload.id){
-                return {...item, boardId:action.payload.boardId}
+                return {...item, tasks:action.payload.taskId}
             }
             return item
         })
@@ -49,7 +49,7 @@ switch(action.type){
     case "remove_task_id_from_a_list":{
         const updatedListList = list.map(item =>{
             if(item.id===action.payload.id){
-                return {...item, taskId: taskId.filter(item !== action.payload.taskId)}
+                return {...item, tasks: item.tasks.filter(item.id !== action.payload.taskId)}
             }
             return item
         })
