@@ -12,6 +12,7 @@ export const boardReducer = (boards = [], action) => {
         list: [],
         tasks: [],
       };
+      console.log(newBoard,'sdkfasdfkasdfjasdflkasdjkl')
       return [...boards, newBoard];
     }
     case "Change_Title": {
@@ -19,6 +20,7 @@ export const boardReducer = (boards = [], action) => {
         if (item.id === action.payload.id) {
           return { ...item, title: action.payload.title };
         }
+        
         return item;
       });
     }
@@ -84,3 +86,4 @@ export const boardReducer = (boards = [], action) => {
     }
   }
 };
+export default boardReducer
